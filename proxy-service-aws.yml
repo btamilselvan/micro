@@ -1,0 +1,8 @@
+server:
+ porti: 8080
+zuul:
+  ignoredServices: '*'
+  routes:
+    address:
+      path: /address/**
+      url: http://address-service.local:8080/
