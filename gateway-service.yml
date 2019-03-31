@@ -1,0 +1,22 @@
+spring:
+ cloud:
+  gateway:
+   routes:
+   - id: person-service
+     uri: lb://person-service.local
+     predicates:
+      - Path=/person/**
+     filters:
+      - RewritePath=/person/(?<path>.*), /$\{path}
+   - id: address-service
+     uri: lb://address-service
+     predicates:
+      - Path=/address/**
+     filters:
+      - RewritePath=/address/(?<path>.*), /$\{path}
+server:
+ port: 8080
+eureka:
+ client:
+  serviceUrl:
+   defaultZone: http://discovery-service.local:8080/eureka/
