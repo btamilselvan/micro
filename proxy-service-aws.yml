@@ -5,7 +5,7 @@ zuul:
   routes:
     address:
       path: /address/**
-      url: http://address-service.local:8080/
+      url: http://address-service.local/
       serviceId: address-service
     person:
       path: /person/**
