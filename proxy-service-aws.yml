@@ -1,16 +1,11 @@
 server:
  port: 8080
-eureka:
- client:
-  serviceUrl:
-   defaultZone: http://discovery-service.local:8080/eureka/
-  fetchRegistry: true
-  preferIpAddress: true
 zuul:
   ignoredServices: '*'
   routes:
     address:
       path: /address/**
+      url: http://address-service.local:8080/
       serviceId: address-service
     person:
       path: /person/**
