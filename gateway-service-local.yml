@@ -4,11 +4,11 @@ spring:
             discovery:
                 locator:
                     enabled: true
-                    owerCaseServiceId: true
+                    lowerCaseServiceId: true
 server:
  port: 8083
 eureka:
  client:
   serviceUrl:
-   defaultZone: http://eureka-server:8761/eureka/
+   defaultZone: http://localhost:8761/eureka/
 
